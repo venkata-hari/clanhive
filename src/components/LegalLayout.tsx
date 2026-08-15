@@ -20,9 +20,7 @@ export function LegalLayout({
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70">
             {intro}
           </p>
-          <p className="mt-4 text-sm text-foreground/60">
-            Effective date: {APP_CONFIG.effectiveDate}
-          </p>
+      
         </div>
       </header>
 

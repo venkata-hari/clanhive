@@ -16,7 +16,7 @@ export const privacySections: LegalSection[] = [
     title: "Introduction",
     body: [
       `This Privacy Policy explains how ${C} ("we", "us") handles information when you use the ClanHive mobile application and this website. By using ClanHive, you agree to the practices described here.`,
-      `Effective date: ${APP_CONFIG.effectiveDate}.`,
+
     ],
   },
   {
@@ -187,7 +187,7 @@ export const termsSections: LegalSection[] = [
     id: "acceptance-of-terms",
     title: "Acceptance of Terms",
     body: [
-      `By downloading, accessing, or using ClanHive, you agree to these Terms & Conditions. If you do not agree, please do not use the service. Effective date: ${APP_CONFIG.effectiveDate}.`,
+      `By downloading, accessing, or using ClanHive, you agree to these Terms & Conditions. If you do not agree, please do not use the service.`,
     ],
   },
   {
