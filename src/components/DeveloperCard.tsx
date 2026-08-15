@@ -9,7 +9,11 @@ export function DeveloperCard() {
           aria-hidden="true"
           className="flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl bg-accent text-2xl font-bold text-primary"
         >
-          CH
+          <img
+            src="./assets/venkatahari.png"
+            alt="Developer avatar"
+            style={{ width: "100%",height:'100%',borderRadius:'50%',objectFit:'contain' }}
+          />
         </span>
         <div>
           <h3 className="text-xl font-semibold">{APP_CONFIG.developerName}</h3>
@@ -32,6 +36,7 @@ export function DeveloperCard() {
       <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={`mailto:${APP_CONFIG.supportEmail}`}
+            target="_blank"
           className="btn-base btn-outline"
           aria-label="Email the developer"
         >
@@ -40,6 +45,7 @@ export function DeveloperCard() {
         <a
           href={APP_CONFIG.developerLinkedIn}
           rel="noopener noreferrer"
+          target="_blank"
           className="btn-base btn-outline"
           aria-label="Developer LinkedIn profile"
         >
@@ -47,6 +53,7 @@ export function DeveloperCard() {
         </a>
         <a
           href={APP_CONFIG.developerGithub}
+           target="_blank"
           rel="noopener noreferrer"
           className="btn-base btn-outline"
           aria-label="Developer GitHub profile"

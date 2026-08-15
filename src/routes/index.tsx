@@ -19,7 +19,7 @@ import { CTASection } from "@/components/CTASection";
 import { Reveal } from "@/components/Reveal";
 import { features, whyClanHive } from "@/data/features";
 
-const title = "ClanHive — Grow. Track. Connect. Together.";
+const title = "ClanHive";
 const description =
   "ClanHive helps you create activities, track progress, participate in community activities, connect with others, and grow together.";
 
