@@ -25,7 +25,7 @@ export function DeveloperCard() {
 
       <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
         ClanHive was created with the vision of combining personal development with
-        meaningful social connection. The goal is to create a simple platform where
+        meaningful social connection. The aim is to create a simple platform where
         people can track their progress while staying connected with others.
       </p>
 
