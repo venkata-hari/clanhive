@@ -1,7 +1,7 @@
 export const APP_CONFIG = {
   appName: "ClanHive",
   tagline: "Grow. Track. Connect. Together.",
-  googlePlayUrl: "GOOGLE_PLAY_STORE_URL",
+  googlePlayUrl: "https://play.google.com/store/apps/details?id=com.venkatahari.clanhive",
   supportEmail: "venkatahari84@gmail.com",
   companyName: "ClanHive",
   developerName: "VenkataHari",

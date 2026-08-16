@@ -60,6 +60,7 @@ export function Navbar() {
           </Link>
           <a
             href={APP_CONFIG.googlePlayUrl}
+            target="_blank"
             className="btn-base btn-primary"
             rel="noopener noreferrer"
           >
@@ -105,6 +106,7 @@ export function Navbar() {
               </Link>
               <a
                 href={APP_CONFIG.googlePlayUrl}
+                target="_blank"
                 className="btn-base btn-primary w-full"
                 rel="noopener noreferrer"
               >
