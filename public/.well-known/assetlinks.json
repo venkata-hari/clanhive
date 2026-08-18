@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.venkatahari.clanhive",
+      "sha256_cert_fingerprints": [
+        "DB:93:76:87:19:C8:1F:F9:30:C3:D6:EC:50:56:D7:07:D1:05:B1:53:DE:08:3F:3C:7B:18:79:B4:03:93:DD:BD"
+      ]
+    }
+  }
+]
