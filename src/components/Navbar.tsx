@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Download } from "lucide-react";
 import { Logo } from "./Logo";
@@ -9,11 +9,17 @@ const navLinks = [
   { to: "/about", label: "About" },
   { to: "/privacy-policy", label: "Privacy Policy" },
   { to: "/terms-and-conditions", label: "Terms & Conditions" },
+  { to: "/invite", label: "Invite" },
 ] as const;
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const pathname = useRouterState({
+    select: (s) => s.location.pathname,
+  });
+  const isInvitePage = pathname === "/invite";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -42,7 +48,7 @@ export function Navbar() {
           {navLinks.map((l) => (
             <li key={l.to}>
               <Link
-                to={l.to}
+                to={l.to as any}
                 activeOptions={{ exact: l.to === "/" }}
                 activeProps={{ className: "text-primary bg-accent" }}
                 inactiveProps={{ className: "text-foreground/75" }}
@@ -54,20 +60,22 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 lg:flex">
-          <Link to="/about" className="btn-base btn-outline">
-            Get Started
-          </Link>
-          <a
-            href={APP_CONFIG.googlePlayUrl}
-            target="_blank"
-            className="btn-base btn-primary"
-            rel="noopener noreferrer"
-          >
-            <Download className="h-4 w-4" aria-hidden="true" />
-            Download App
-          </a>
-        </div>
+        {!isInvitePage && (
+          <div className="hidden items-center gap-2 lg:flex">
+            <Link to="/about" className="btn-base btn-outline">
+              Get Started
+            </Link>
+            <a
+              href={APP_CONFIG.googlePlayUrl}
+              target="_blank"
+              className="btn-base btn-primary"
+              rel="noopener noreferrer"
+            >
+              <Download className="h-4 w-4" aria-hidden="true" />
+              Download App
+            </a>
+          </div>
+        )}
 
         <button
           type="button"
@@ -86,7 +94,7 @@ export function Navbar() {
             {navLinks.map((l) => (
               <li key={l.to}>
                 <Link
-                  to={l.to}
+                  to={l.to as any}
                   activeOptions={{ exact: l.to === "/" }}
                   activeProps={{ className: "text-primary bg-accent" }}
                   onClick={() => setOpen(false)}
@@ -96,24 +104,26 @@ export function Navbar() {
                 </Link>
               </li>
             ))}
-            <li className="mt-2 flex flex-col gap-2">
-              <Link
-                to="/about"
-                onClick={() => setOpen(false)}
-                className="btn-base btn-outline w-full"
-              >
-                Get Started
-              </Link>
-              <a
-                href={APP_CONFIG.googlePlayUrl}
-                target="_blank"
-                className="btn-base btn-primary w-full"
-                rel="noopener noreferrer"
-              >
-                <Download className="h-4 w-4" aria-hidden="true" />
-                Download App
-              </a>
-            </li>
+            {!isInvitePage && (
+              <li className="mt-2 flex flex-col gap-2">
+                <Link
+                  to="/about"
+                  onClick={() => setOpen(false)}
+                  className="btn-base btn-outline w-full"
+                >
+                  Get Started
+                </Link>
+                <a
+                  href={APP_CONFIG.googlePlayUrl}
+                  target="_blank"
+                  className="btn-base btn-primary w-full"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="h-4 w-4" aria-hidden="true" />
+                  Download App
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       )}
